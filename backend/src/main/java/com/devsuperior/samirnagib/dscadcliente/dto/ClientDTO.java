@@ -3,6 +3,8 @@ package com.devsuperior.samirnagib.dscadcliente.dto;
 import java.io.Serializable;
 import java.time.Instant;
 
+import com.devsuperior.samirnagib.dscadcliente.entities.Client;
+
 public class ClientDTO implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -18,6 +20,25 @@ public class ClientDTO implements Serializable {
 	
 	public ClientDTO() {
 		
+	}
+
+
+	public ClientDTO(Long id, String name, String cpf, Double income, Instant birthDate, Integer children) {
+		this.id = id;
+		this.name = name;
+		this.cpf = cpf;
+		this.income = income;
+		this.birthDate = birthDate;
+		this.children = children;
+	}
+
+	public ClientDTO(Client entity) {
+		this.id = entity.getId();
+		this.name = entity.getName();
+		this.cpf = entity.getCpf();
+		this.income = entity.getIncome();
+		this.birthDate = entity.getBirthDate();
+		this.children = entity.getChildren();
 	}
 
 
